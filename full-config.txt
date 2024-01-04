@@ -50,23 +50,23 @@ quit
 #=========================#
 
 user-interface vty 0 4
- authentication-mode aaa
- user privilege level 3
- history-command max-size 20
- idle-timeout 20 0
- screen-length 0
- protocol inbound telnet
- quit
+authentication-mode aaa
+user privilege level 3
+history-command max-size 20
+idle-timeout 20 0
+screen-length 0
+protocol inbound telnet
+quit
 
 #=================================================#
 # perintah create user dan password remote telnet #
 #=================================================#
 
 aaa
- local-user (username sesuai keinginan) password irreversible-cipher (password sesuai keinginan)
- local-user (username sesuai keinginan) service-type telnet
- local-user (username sesuai keinginan) level 3
- quit
+local-user (username sesuai keinginan) password irreversible-cipher (password sesuai keinginan)
+local-user (username sesuai keinginan) service-type telnet
+local-user (username sesuai keinginan) level 3
+quit
 
 #===============================#
 # perintah enable remote telnet #
@@ -80,8 +80,8 @@ undo telnet server disable
 #==================#
 
 vlan (diisi angka vlan sesuai keinginan)
- name (diisi nama vlan sesuai keinginan)
- quit
+name (diisi nama vlan sesuai keinginan)
+quit
 
 #==================================#
 # perintah setting port mode trunk #
@@ -116,22 +116,22 @@ quit
 #========================================#
 
 interface Eth-Trunk10
- description (diisi deskripsi / nama interface)
- port link-type trunk
- port trunk allow-pass vlan (diisi vlan yang akan di allow)
- mode (lacp/lacp-static/lacp-dynamic)
+description (diisi deskripsi / nama interface)
+port link-type trunk
+port trunk allow-pass vlan (diisi vlan yang akan di allow)
+mode (lacp/lacp-static/lacp-dynamic)
 
 
 interface 10GE1/0/41
- description (diisi deskripsi / nama interface)
- eth-trunk 10 (10 --> id LAG yang sudah dicreate)
- device transceiver 10GBASE-FIBER
+description (diisi deskripsi / nama interface)
+eth-trunk 10 (10 --> id LAG yang sudah dicreate)
+device transceiver 10GBASE-FIBER
 
 
 interface 10GE1/0/42
- description (diisi deskripsi / nama interface)
- eth-trunk 10 (10 --> id LAG yang sudah dicreate)
- device transceiver 10GBASE-FIBER
+description (diisi deskripsi / nama interface)
+eth-trunk 10 (10 --> id LAG yang sudah dicreate)
+device transceiver 10GBASE-FIBER
 
 #===============================================#
 # perintah untuk mengganti nama/identity switch #
