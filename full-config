@@ -1,0 +1,124 @@
+#==========================================#
+# perintah setting password remote console #
+#==========================================#
+
+user-interface con 0
+authentication-mode password
+set authentication password cipher (diisi password sesuai keinginan)
+
+#============================#
+# perintah untuk create vlan #
+#============================#
+
+vlan 55
+description REMOTE
+name REMOTE
+quit
+
+#========================================================#
+# perintah untuk menambahkan ip remote switch di vlan 50 #
+#========================================================#
+
+interface Vlanif 50
+ip address 192.168.100.2 255.255.255.248
+quit
+
+#=============================================================================#
+# perintah untuk menambahkan ip remote switch di interface ethernet MEth0/0/0 #
+#=============================================================================#
+
+interface MEth0/0/0
+ip address 192.168.100.2 255.255.255.248
+quit
+
+#============================================#
+# perintah untuk tambah default route switch #
+#============================================#
+
+ip route-static 0.0.0.0 0.0.0.0 192.168.100.1
+quit
+
+#==================================================#
+# perintah untuk set user maksimum yang bisa login #
+#==================================================#
+
+user-interface maximum-vty 21
+quit
+
+#=========================#
+# perintah setting telnet #
+#=========================#
+
+user-interface vty 0 4
+ authentication-mode aaa
+ user privilege level 3
+ history-command max-size 20
+ idle-timeout 20 0
+ screen-length 0
+ protocol inbound telnet
+ quit
+
+#=================================================#
+# perintah create user dan password remote telnet #
+#=================================================#
+
+aaa
+ local-user (username sesuai keinginan) password irreversible-cipher (password sesuai keinginan)
+ local-user (username sesuai keinginan) service-type telnet
+ local-user (username sesuai keinginan) level 3
+ quit
+
+#===============================#
+# perintah enable remote telnet #
+#===============================#
+
+stelnet server enable
+undo telnet server disable
+
+#==================#
+# create/buat vlan #
+#==================#
+
+vlan (diisi angka vlan sesuai keinginan)
+ name (diisi nama vlan sesuai keinginan)
+ quit
+
+#==================================#
+# perintah setting port mode trunk #
+#==================================#
+
+interface (diisi interface yg ingin kita konfig misal 10GE1/0/1)
+description (diisi deskripsi interface)
+port link-type trunk
+port trunk allow-pass vlan (diisi vlan yg akan kita allow)
+quit
+
+#===================================#
+# perintah setting port mode access #
+#===================================#
+
+interface (diisi interface yg ingin kita konfig misal 10GE1/0/1)
+description (diisi deskripsi interface)
+port link-type access
+port default vlan (diisi vlan access yg akan kita allow)
+quit
+
+#==========================================#
+# perintah setting limit bandwidth by port #
+#==========================================#
+
+interface (diisi interface yg ingin kita konfig misal 10GE1/0/1)
+qos lr cir (diisi limit sesuai keinginan kita misal 500000 satuan kbps)
+quit
+
+#===============================================#
+# perintah untuk mengganti nama/identity switch #
+#===============================================#
+
+sysname (diisi identity switch seuai keinginan)
+
+**Note: setelah config jangan lupa commit dan save
+
+commit
+quit
+save
