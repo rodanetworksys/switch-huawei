@@ -111,9 +111,9 @@ interface (diisi interface yg ingin kita konfig misal 10GE1/0/1)
 qos lr cir (diisi limit sesuai keinginan kita misal 500000 satuan kbps)
 quit
 
-#===============================================#
-# perintah konfigurasi LAG Switch Huawei CE6851 #
-#===============================================#
+#========================================#
+# perintah konfigurasi LAG Switch Huawei #
+#========================================#
 
 interface Eth-Trunk10
  description (diisi deskripsi / nama interface)
