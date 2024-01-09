@@ -111,6 +111,15 @@ interface (diisi interface yg ingin kita konfig misal 10GE1/0/1)
 qos lr cir (diisi limit sesuai keinginan kita misal 500000 satuan kbps)
 quit
 
+#====================================#
+# perintah create snmp switch huawei #
+#====================================#
+
+snmp-agent community (complexity-check/read/write) cipher (isi snmp community sesuai yang diinginkan)
+snmp-agent sys-info contact (kontak yang bisa dihubungi)
+snmp-agent sys-info location (lokasi perangkat)
+snmp-agent sys-info version (all,v1,v2c,v3)
+
 #========================================#
 # perintah konfigurasi LAG Switch Huawei #
 #========================================#
