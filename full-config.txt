@@ -127,7 +127,7 @@ snmp-agent sys-info version (all,v1,v2c,v3)
 
 interface Eth-Trunk10
 description (diisi deskripsi / nama interface)
-port link-type trunk
+port link-type trunk / port default vlan (diisi vlan id)
 port trunk allow-pass vlan (diisi vlan yang akan di allow)
 mode (lacp/lacp-static/lacp-dynamic)
 
