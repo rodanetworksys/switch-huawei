@@ -63,6 +63,7 @@ quit
 #=================================================#
 
 aaa
+undo local-user policy security-enhance
 local-user (username sesuai keinginan) password irreversible-cipher (password sesuai keinginan)
 local-user (username sesuai keinginan) service-type telnet
 local-user (username sesuai keinginan) level 3
