@@ -108,8 +108,15 @@ quit
 # perintah setting limit bandwidth by port #
 #==========================================#
 
-interface (diisi interface yg ingin kita konfig misal 10GE1/0/1)
-qos lr cir (diisi limit sesuai keinginan kita misal 500000 satuan kbps)
+qos car Metro_Tofa cir 202 mbps (membuat profile limitasi)
+quit
+
+interface 10GE1/0/33 (isi interface yang akan dilimit)
+description Metro_Tofa
+port default vlan 111
+qos lr cir 250 mbps outbound (settingan untuk limit download sisi user)
+qos car inbound Metro_Tofa (settingan untuk limit upload sisi user)
+device transceiver 1000BASE-X
 quit
 
 #====================================#
