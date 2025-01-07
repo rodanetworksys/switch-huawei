@@ -200,6 +200,12 @@ stp vlan (VLAN ID) disable
 
 stp disable
 
+#======================================================#
+# perintah clear mac address agging time switch huawei #
+#======================================================#
+
+reset mac-address vlan (VLAN ID)
+reset mac-address (interface)
 
 
 
