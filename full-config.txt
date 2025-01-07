@@ -163,9 +163,9 @@ quit
 save
 
 
-#===========================================#
-# command clear CRC interface switch huawei #
-#===========================================#
+#============================================#
+# perintah clear CRC interface switch huawei #
+#============================================#
 
 reset interface counters (interface)
 
