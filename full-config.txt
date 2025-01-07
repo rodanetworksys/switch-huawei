@@ -175,6 +175,23 @@ reset interface counters (interface)
 
 display logbuffer brief
 
+#=============================================#
+# perintah enable spanning-tree switch huawei #
+#=============================================#
+
+stp mode (mstp/rstp/stp/vbst)
+
+#===================================================#
+# perintah disable spanning-tree vlan switch huawei #
+#===================================================#
+
+stp vlan (VLAN ID) disable
+
+#==============================================#
+# perintah disable spanning-tree switch huawei #
+#==============================================#
+
+stp disable
 
 
 
