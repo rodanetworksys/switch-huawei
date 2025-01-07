@@ -169,5 +169,13 @@ save
 
 reset interface counters (interface)
 
+#================================#
+# perintah cek log switch huawei #
+#================================#
+
+display logbuffer brief
+
+
+
 
 
