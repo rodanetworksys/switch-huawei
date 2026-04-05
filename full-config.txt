@@ -126,6 +126,27 @@ qos car inbound Metro_Tofa (settingan untuk limit upload sisi user)
 device transceiver 1000BASE-X
 quit
 
+#==========================================#
+# perintah setting limit bandwidth by vlan #
+#==========================================#
+
+traffic classifier C401 type and
+if-match vlan 401
+
+traffic behavior b401
+statistics enable
+car cir 9200000 kbps pir 9200000 kbps green pass
+remark dscp ef
+
+traffic policy p401
+classifier C401 behavior b401 precedence 5
+
+interface 10GE1/0/25
+port link-type trunk
+undo port trunk allow-pass vlan 1
+port trunk allow-pass vlan 401
+traffic-policy p401 inbound
+
 #====================================#
 # perintah create snmp switch huawei #
 #====================================#
