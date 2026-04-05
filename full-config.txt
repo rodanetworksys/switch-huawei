@@ -157,6 +157,31 @@ description (diisi deskripsi / nama interface)
 eth-trunk 10 (10 --> id LAG yang sudah dicreate)
 device transceiver 10GBASE-FIBER
 
+#=======================================#
+# perintah setting Q-In-Q switch huawei #
+#=======================================#
+
+port link-type dot1q-tunnel
+port default vlan (vlan id)
+
+#====================================================#
+# perintah setting traffic engineering switch huawei #
+#====================================================#
+
+interface Tunnel9
+description MPLS_TE_NGIMBANG
+ip address unnumbered interface LoopBack0
+tunnel-protocol mpls te
+destination 4.4.4.11
+mpls te tunnel-id 9
+mpls te record-route label
+mpls te path explicit-path ODC_NGIMBANG_VIA_PO
+mpls te path explicit-path ODC_NGIMBANG_VIA_CRB secondary
+mpls te fast-reroute
+mpls te backup ordinary
+mpls te reserved-for-binding
+mpls te commit
+
 #===============================================#
 # perintah untuk mengganti nama/identity switch #
 #===============================================#
